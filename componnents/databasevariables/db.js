@@ -1,5 +1,5 @@
 const express = require("express");
-const student = require("./studentdb");
+const student = require("./enduserschema");
 
 require('dotenv').config();
 const mongoose = require("mongoose");

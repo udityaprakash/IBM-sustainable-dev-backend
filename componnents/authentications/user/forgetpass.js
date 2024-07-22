@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const student = require("../../databasevariables/studentdb");
+const student = require("../../databasevariables/enduserschema");
 const path=require("../../../path");
 const nodemailer=require("nodemailer");
 const otpGenerator = require('otp-generator');

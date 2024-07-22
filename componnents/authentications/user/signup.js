@@ -4,7 +4,7 @@ var Emailvalidator = require("email-validator");
 require('dotenv').config()
 const nodemailer=require("nodemailer");
 const otpGenerator = require('otp-generator');
-const enduser = require("../../databasevariables/studentdb");
+const enduser = require("../../databasevariables/enduserschema");
  
 
 var transporter = nodemailer.createTransport({

@@ -1,5 +1,5 @@
 
-const student = require("../../databasevariables/studentdb");
+const student = require("../../databasevariables/enduserschema");
 // import '../../server.js';
 const result={
 get: async (req,res)=>{

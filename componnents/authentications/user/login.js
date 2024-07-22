@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
 const path=require("../../../path");
-const enduser= require("../../databasevariables/studentdb"); 
+const enduser= require("../../databasevariables/enduserschema"); 
 
 
 
@@ -18,16 +18,17 @@ post: async (req,res)=>{
               console.log(result[0].verified);
               if(result[0].verified == true){
                 res.status(200).json({
-                  status:true,
+                  success:true,
+                  token:result[0]._id,
                   msg:"User Exist",
-                  redirecturl:"user/dashboard/:_id"
+                  data:result[0]
                 });
                 // res.redirect("dashboard/"+ result[0]._id);
 
               }else{
-                res.redirect("signup/verifyotp/" + email );
+                // res.redirect("signup/verifyotp/" + email );
                 res.json({success:false,msg:"user not verified yet please verify",
-              redirecturl:"user/signup/verifyotp/<email>"});
+                redirecturl:"user/signup/verifyotp/:email"});
               }
 
             }else{
@@ -42,7 +43,7 @@ post: async (req,res)=>{
           }else{
             res.status(404).json({
               success:false,
-              msg:"Email ID don't exist"
+              msg:"Email ID does'nt exist"
             });
           }
   
