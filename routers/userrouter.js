@@ -3,7 +3,7 @@ const signup = require("../componnents/authentications/user/signup");
 const login= require("../componnents/authentications/user/login");
 const dashboard=require("../componnents/utils/user/dashboard");
 const forgetpass=require("../componnents/authentications/user/forgetpass");
-
+const event = require("../componnents/utils/admin/event");
 
 //--user/signup
 router.post('/signup',signup.post);
@@ -25,6 +25,8 @@ router.post("/login/forgetpass/verified",forgetpass.Set_password);
 
 //--user/dashboard
 router.get('/dashboard/:id',dashboard.get);
+
+router.get('/latest-events',event.getEvents);
 
 router.all("*",(req,res)=>{
     res.status(404).json({
