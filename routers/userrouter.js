@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const signup = require("../componnents/authentications/user/signup");
 const login= require("../componnents/authentications/user/login");
-const dashboard=require("../componnents/dashboard/user/dashboard");
+const dashboard=require("../componnents/utils/user/dashboard");
 const forgetpass=require("../componnents/authentications/user/forgetpass");
 
 
@@ -25,6 +25,13 @@ router.post("/login/forgetpass/verified",forgetpass.Set_password);
 
 //--user/dashboard
 router.get('/dashboard/:id',dashboard.get);
+
+router.all("*",(req,res)=>{
+    res.status(404).json({
+        success:false,
+        msg:"page not found/ api does'nt exist 😒."
+    });
+});
 
 
 

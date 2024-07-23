@@ -32,7 +32,7 @@ post: async (req,res)=>{
           if(Emailvalidator.validate(email)){
               if(await result.userexist(email)){
                 res.json({success:false,
-                msg:"user already exists"}); 
+                msg:"user already exists with this email 🤨"}); 
               }else{
 
                 const user= new enduser({
@@ -44,7 +44,7 @@ post: async (req,res)=>{
                   await user.save().then((user)=>{
                     res.status(200).json({
                       success:true,
-                      msg:"User Recorded Successfully"
+                      msg:"User Recorded Successfully 😍"
                     });
                     // res.redirect("signup/verifyotp/"+email);
 
@@ -53,7 +53,7 @@ post: async (req,res)=>{
                     res.status(400).json({
                       success:false,
                       error:err,
-                      msg:"User not been recorded"
+                      msg:"User not been recorded 😥"
                     });
 
                   });
@@ -62,7 +62,7 @@ post: async (req,res)=>{
         }else{
           res.json({
               success:false,
-              msg:"Invalid Email Format"
+              msg:"Invalid Email Format 🙄"
             });
 
         }
@@ -74,7 +74,7 @@ post: async (req,res)=>{
     }else{
         res.json({
         success:false,
-        msg:"One of the field Found Missing"
+        msg:"One of the field Found Missing 😉"
       });
     }
   
@@ -82,7 +82,7 @@ post: async (req,res)=>{
   get:(req,res)=>{
     res.json({
             status:200,
-            msg:"ready to signup"
+            msg:"ready to signup 🤞"
           });
 
     // res.sendFile(path+"/public/signup.html");
@@ -98,7 +98,7 @@ post: async (req,res)=>{
         if(u.verified == true){
           res.json({
             success:false,
-            msg:"user already verified"
+            msg:"user already verified 😉"
           });
         }else{
           try{
@@ -117,7 +117,7 @@ post: async (req,res)=>{
                       <h4>Greetings of the day!</h4>
                       <p style="margin-bottom: 30px;">This is your OTP for email verification. Please enter this OTP to get started.</p>
                       <h1 style="font-size: 40px; letter-spacing: 2px; text-align:center;">${otp}</h1>
-                      <p style="margin-bottom: 30px;">you are really great with your thought process.</p>
+                      <p style="margin-bottom: 30px;">You are really great with your thoughts.</p>
                  </div>`
             };
 
@@ -127,7 +127,7 @@ post: async (req,res)=>{
                         } else {
                           console.log('Email sent: ' + info.response);
                           res.json({success:true,
-                          msg:"OTP send to email"});
+                          msg:"OTP send to email successfully😊"});
                         }
             });
 
@@ -138,7 +138,7 @@ post: async (req,res)=>{
           }catch(err){
             res.json({
                         success:false,
-                        msg:"Either email invalid or sender email invalid"
+                        msg:"Either email invalid or sender email invalid 😗"
             });
 
           }
@@ -147,13 +147,13 @@ post: async (req,res)=>{
       }else{
         res.json({
           success:false,
-          msg:"Email does not exist"
+          msg:"Email does not exist😁. Please verify it."
         });
       }
     }else{
       res.json({
         success:false,
-        msg:"Invalid Email Format"
+        msg:"Invalid Email Format 🤬"
       });
     }
     
@@ -186,12 +186,12 @@ post: async (req,res)=>{
                 success:true,
                 token:resu[0]._id,
                 result:result,
-                msg:"user verified successfully"
+                msg:"user verified successfully 🥰"
               });
 
             }else{
               res.json({success:false,
-              msg:"Invalid OTP"});
+              msg:"Invalid OTP 😑"});
               
             }
 
@@ -199,12 +199,12 @@ post: async (req,res)=>{
 
           }else{
               res.json({success:false,
-              msg:"user is already verified"});
+              msg:"user is already verified 🙂"});
               
             }
           }else{
             res.json({success:false,
-            msg:"user doesn't exist"});
+            msg:"user doesn't exist 😒"});
         }
 
 

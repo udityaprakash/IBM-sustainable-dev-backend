@@ -20,21 +20,21 @@ post: async (req,res)=>{
                 res.status(200).json({
                   success:true,
                   token:result[0]._id,
-                  msg:"User Exist",
+                  msg:"User Exist and Logged in Successfully 😍",
                   data:result[0]
                 });
                 // res.redirect("dashboard/"+ result[0]._id);
 
               }else{
                 // res.redirect("signup/verifyotp/" + email );
-                res.json({success:false,msg:"user not verified yet please verify",
+                res.json({success:false,msg:"user not verified yet please verify 😤",
                 redirecturl:"user/signup/verifyotp/:email"});
               }
 
             }else{
               res.status(401).json({
                 success:false,
-                msg:"Password incorrect"
+                msg:"Password incorrect 😢"
               });
 
             }
@@ -43,20 +43,20 @@ post: async (req,res)=>{
           }else{
             res.status(404).json({
               success:false,
-              msg:"Email ID does'nt exist"
+              msg:"Email ID does'nt exist 😨"
             });
           }
   
   
     }else{
       res.status(400).json({success:false,
-      msg:"One of the field Found Missing"});
+      msg:"One of the field Found Missing 😉"});
   }
   },
   get:(req,res)=>{
     res.json({
       status:200,
-      msg:"ready to login"
+      msg:"ready to login 🤞"
     })
     // res.sendFile(path+"/public/login.html");
   }
