@@ -4,9 +4,9 @@ const bcrypt=require("bcrypt");
 const app = express();
 require('dotenv').config()
 const db = require("./componnents/databasevariables/db")
-const middleware = require("./componnents/utils/admin/middleware");
+const cors = require("cors");
 
-
+app.use(cors());
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:false}));
 app.use(express.static("public"));
