@@ -35,6 +35,8 @@ app.all("*",(req,res)=>{
     });
 });
 
-app.listen(port ,()=>{
-  console.log("server started "+port);
-});
+// app.listen(port ,()=>{
+//   console.log("server started "+port);
+// });
+
+module.exports = app;
